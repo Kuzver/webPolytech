@@ -1,0 +1,3 @@
+[submodule "webPolytech-submodule"]
+	path = webPolytech-submodule
+	url = https://github.com/Kuzver/webPolytech.git
