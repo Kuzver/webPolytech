@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="slyle.css">
+</head>
+<body>
+    <header class="grid-header">
+        <h1>Регистарция пользователя</h1>
+    </header>
+
+    <main class="grid-main">
+        <form class="registration-form" action="#" method="post">
+            <fieldset>
+                <legend>Информация о пользователе</legend>
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите свое полное имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Пол:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Мужчина</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Женщина</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Контакты</legend>
+                <div class="form-group">
+                    <label for="email">Почта:</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-time">Время для звонка:</label>
+                    <select id="contact-time" name="contact-time">
+                        <option value="morning">Утро</option>
+                        <option value="day">День</option>
+                        <option value="evening">Вечер</option>
+                    </select>
+                </div>
+            </fieldset>
+
+                 <button type="submit" class="submit-button">
+                    <span class="button-text">Отправить</span>
+                    <span class="icon">&#10148;</span>
+                </button>
+                <button type="reset" class="reset-button">
+                    <span class="button-text">Сбросить</span>
+                    <span class="icon">&#8634;</span>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="grid-footer">
+        <p>&copy; Вера Политех</p>
+    </footer>
+</body>
+</html>
