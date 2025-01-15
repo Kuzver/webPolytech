@@ -57,14 +57,22 @@ section h2 {
 
  /* Image styles*/
  .image {
-   display: flex;
-   justify-content: center;
-   gap: 20px;
-    margin-bottom: 20px;
- }
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Увеличенное расстояние между элементами */
+    margin-bottom: 40px; /* Увеличенный отступ снизу */
+      padding: 20px; /* Добавлен padding для большего объема*/
+      background-color: rgba(240, 240, 240, 0.5); /* Добавил цвет фона для лучшей заметности*/
+      border-radius: 10px; /* Добавлен скругление углов для лучшего внешнего вида */
+  }
+  
+  .image img {
+      max-width: 150%; /* Увеличиваем размер изображения */
+      max-height: 150%; /* Увеличиваем размер изображения */
+  }
 
 .card-img {
-    width: 100px;
+    width: 300px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -139,6 +147,7 @@ section h2 {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .add-review-section h2 {
@@ -203,35 +212,45 @@ section h2 {
   order: 2;
 }
 
-
-/* Download Section */
-#download > div {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-#download ul {
-    list-style-type: none; /* Remove default bullet */
-    padding-left: 0;
-    color: #555;
-}
-#download h3 {
-   margin-bottom: 10px;
-    color: #444;
-    text-align: center;
-}
-#download > div > ul > div {
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-     transition: transform 0.3s ease;
-}
-#download > div > ul > div:hover {
-    transform: translateY(-5px); /* Lift up on hover */
-}
+#download .download-grid { /* Контейнер для grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  #download .download-column {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+  }
+  
+  #download ul {
+      list-style-type: none;
+      padding-left: 0;
+      color: #555;
+  }
+  
+  #download h3 {
+     margin-bottom: 10px;
+      color: #444;
+      text-align: center;
+  }
+  
+  #download .download-column ul li div {  /* Обратите внимание, что мы поменяли селектор*/
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+  }
+  
+  #download .download-column ul li div:hover {  /* Обратите внимание, что мы поменяли селектор*/
+      transform: translateY(-5px);
+  }
+   #download > div:last-child {
+      margin-bottom: 0; /* убираем нижний отступ у последнего div */
+  }
 .transform {
     transform: rotate3d(0, 0.5, 0.5, 0.5deg);
 }
