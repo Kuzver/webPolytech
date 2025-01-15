@@ -59,18 +59,47 @@ section h2 {
  .image {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Увеличенное расстояние между элементами */
-    margin-bottom: 40px; /* Увеличенный отступ снизу */
-      padding: 20px; /* Добавлен padding для большего объема*/
-      background-color: rgba(240, 240, 240, 0.5); /* Добавил цвет фона для лучшей заметности*/
-      border-radius: 10px; /* Добавлен скругление углов для лучшего внешнего вида */
-  }
-  
+    gap: 20px; /* Уменьшенный отступ по умолчанию */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 10px;
+    flex-wrap: wrap; /* Разрешает перенос элементов */
+}
+
+.image img {
+    max-width: 100%; /* Изображения не выходят за контейнер */
+    height: auto; /* Автоматическая высота */
+}
   .image img {
       max-width: 150%; /* Увеличиваем размер изображения */
       max-height: 150%; /* Увеличиваем размер изображения */
   }
+  @media (max-width: 768px) {
+    .image {
+        gap: 15px;
+        margin-bottom: 15px;
+         padding: 10px;
+        flex-direction: column; /* Элементы располагаются в столбик */
+          align-items: center; /* Выравнивание по центру для элементов в столбик*/
+    }
 
+}
+
+
+/* Медиа-запрос для экранов больше 768px (планшеты и десктопы) */
+@media (min-width: 768px) {
+  .image {
+    gap: 40px;
+        padding: 20px;
+    margin-bottom: 40px;
+
+  }
+      .image img {
+           max-width: 150%; /* Увеличиваем размер изображения */
+         max-height: 150%; /* Увеличиваем размер изображения */
+    }
+}
 .card-img {
     width: 300px;
     border-radius: 5px;
@@ -212,11 +241,13 @@ section h2 {
   order: 2;
 }
 
-#download .download-grid { /* Контейнер для grid */
+#download .download-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* По умолчанию два столбца */
     gap: 20px;
+    margin-bottom: 20px;
   }
+  
   
   #download .download-column {
       padding: 20px;
@@ -238,22 +269,50 @@ section h2 {
       text-align: center;
   }
   
-  #download .download-column ul li div {  /* Обратите внимание, что мы поменяли селектор*/
+  #download .download-column ul li div {
       padding: 10px;
       border-radius: 8px;
       text-align: center;
       transition: transform 0.3s ease;
   }
   
-  #download .download-column ul li div:hover {  /* Обратите внимание, что мы поменяли селектор*/
+  #download .download-column ul li div:hover {
       transform: translateY(-5px);
   }
-   #download > div:last-child {
-      margin-bottom: 0; /* убираем нижний отступ у последнего div */
+  
+  #download > div:last-child {
+      margin-bottom: 0;
   }
-.transform {
-    transform: rotate3d(0, 0.5, 0.5, 0.5deg);
-}
+  
+  .transform {
+      transform: rotate3d(0, 0.5, 0.5, 0.5deg);
+      transition: transform 0.3s ease;
+  }
+  
+  /* Медиа-запрос для экранов меньше 768px (смартфоны) */
+  @media (max-width: 768px) {
+     #download .download-grid {
+          grid-template-columns: 1fr; /* Один столбец для маленьких экранов */
+         gap: 10px;
+     }
+       #download .download-column {
+          padding: 10px;
+          margin-bottom: 10px;
+      }
+      #download .download-column ul li div {
+          padding: 5px;
+      }
+       .transform {
+           transform: rotate3d(0, 0.25, 0.25, 0.5deg);
+       }
+  }
+  
+  /* Медиа-запрос для экранов от 768px до 1200px (планшеты) */
+  @media (min-width: 768px) and (max-width: 1200px) {
+      #download .download-grid {
+      gap: 15px;
+     }
+  }
 
 .download-container {
     display: flex;

@@ -71,8 +71,44 @@ html, body {
     padding: 10px;
     border: none;
     outline: none;
-    width: 220px;
     border-radius: 15px;
+      max-width: 100%; /* Максимальная ширина равна контейнеру */
+  }
+  
+  /* Медиа-запрос для экранов меньше 576px (очень маленькие смартфоны) */
+  @media (max-width: 576px) {
+      #search-input {
+          width: 100%; /* Занимает всю доступную ширину */
+          max-width: 100%; /* Максимальная ширина равна контейнеру */
+          margin-bottom: 10px; /* Добавляет отступ снизу, если есть другие элементы */
+       }
+  
+  }
+  
+  
+  /* Медиа-запрос для экранов от 576px до 768px (смартфоны) */
+  @media (min-width: 576px) and (max-width: 768px) {
+    #search-input {
+         width: 90%; /* Занимает 90% доступной ширины */
+          max-width: 300px; /* Максимальная ширина равна 300px */
+      }
+  }
+  
+  
+  /* Медиа-запрос для экранов от 768px до 1200px (планшеты) */
+  @media (min-width: 768px) and (max-width: 1200px) {
+      #search-input {
+         width: 300px;
+           max-width: 300px;
+      }
+  }
+  
+  /* Медиа-запрос для экранов больше 1200px (десктопы) */
+  @media (min-width: 1200px) {
+       #search-input {
+         width: 220px; /* Фиксированная ширина */
+             max-width: 100%;
+       }
   }
   
   #search-button {
