@@ -508,14 +508,40 @@ html, body {
      justify-content: space-between;
      width: 100%;
   }
- #help .help-left {
-  display: flex;
- }
-   #help .help-right {
-     display: flex;
-     justify-content: flex-end;
- }
-  
+  #help .help-left {
+    display: flex;
+    flex-direction: row; /* По умолчанию в ряд */
+    align-items: center; /* Выравнивание по вертикали */
+      margin-bottom: 10px; /* Добавляет отступ снизу по умолчанию*/
+}
+
+#help .help-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+     margin-bottom: 10px;
+}
+
+
+/* Медиа-запрос для экранов меньше 768px (смартфоны) */
+@media (max-width: 768px) {
+    #help .help-left {
+      flex-direction: column; /* Располагаем в столбик на маленьких экранах */
+        align-items: flex-start;
+          margin-bottom: 10px;
+    }
+
+    #help .help-right {
+        flex-direction: column;
+        align-items: flex-end;
+          margin-bottom: 10px;
+    }
+
+    #help .help-right, #help .help-left {
+        justify-content: center;
+    }
+}
   #help ul {
     display: flex;
     align-items: center;
