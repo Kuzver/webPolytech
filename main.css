@@ -462,14 +462,18 @@ html, body {
     background: linear-gradient(to right, #FDE0FF, #B4F3F4);
     padding: 30px;
   }
+  
   a {
-  text-decoration: none;
-  color: black;
-}
+    text-decoration: none;
+    color: black;
+  }
+  
   #help nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap; /* Allow navigation items to wrap */
   }
   
   #help ul {
@@ -479,125 +483,124 @@ html, body {
     padding: 0;
     margin: 0;
     width: 100%;
+    flex-wrap: wrap; /* Allow items to wrap */
   }
   
   #help ul > li:first-child {
-      margin-right: 10px;  /* Оставляем отступ справа */
+    margin-right: 10px;
   }
   
-  #help ul > li:nth-child(2){
-      font-size: 1.5em;
+  #help ul > li:nth-child(2) {
+    font-size: 1.5em;
+  }
+   #help .help-left, #help .help-right {
+          margin-bottom: 10px;
+      }
+  
+  #help .table-container {
+      position: relative;
+       overflow-x: auto; /* Allow horizontal scrolling */
   }
   
   #help table {
-      width: 50%;
-      margin-left: auto; /* Сдвигаем таблицу вправо */
-      margin-right: 0; /* Убираем отступ справа */
-  }
-  #help {
-    background: linear-gradient(to right, #FDE0FF, #B4F3F4);
-    padding: 30px;
-  }
-  a {
-  text-decoration: none; /* Scale instead of rotate */
-  color: black;
-}
-  #help nav {
-      display: flex;
-    align-items: center;
-     justify-content: space-between;
-     width: 100%;
-  }
-  #help .help-left {
-    display: flex;
-    flex-direction: row; /* По умолчанию в ряд */
-    align-items: center; /* Выравнивание по вертикали */
-      margin-bottom: 10px; /* Добавляет отступ снизу по умолчанию*/
-}
-
-#help .help-right {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    align-items: center;
-     margin-bottom: 10px;
-}
-
-
-/* Медиа-запрос для экранов меньше 768px (смартфоны) */
-@media (max-width: 768px) {
-    #help .help-left {
-      flex-direction: column; /* Располагаем в столбик на маленьких экранах */
-        align-items: flex-start;
-          margin-bottom: 10px;
-    }
-
-    #help .help-right {
-        flex-direction: column;
-        align-items: flex-end;
-          margin-bottom: 10px;
-    }
-
-    #help .help-right, #help .help-left {
-        justify-content: center;
-    }
-}
-  #help ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+      width: 100%; /* Table width should fill container */
+      margin-right: 0; /* Remove right margin */
+      border-collapse: collapse; /* Avoid double borders */
   }
   
-  #help ul > li:first-child {
-      margin-right: 10px;  /* Оставляем отступ справа */
-  }
   
-  #help ul > li:nth-child(2){
-      font-size: 1.5em;
-  }
-    #help .table-container{
-        position: relative;
-  }
-  #help table {
-      width: 70%;
-       margin-right: 0; /* Убираем отступ справа */
-  }
-    #help th {
-        font-weight: bold;
-    }
-    
-    #help td {
-        font-weight: normal;
-    }
-    
-  
-  #help table, #help td, #help th {
+  #help th {
+      font-weight: bold;
       text-align: left;
+  
+  }
+  
+  #help td {
+      font-weight: normal;
+      text-align: left;
+  
+  
+  }
+  
+  #help table,
+  #help td,
+  #help th {
       padding: 5px 20px;
+      text-align: left; /* Text align left by default */
+  
   }
   
   #help .card-img {
-    max-height: 50px;
-    object-fit: cover;
-    height: 50px;
-    width: 50px;
-    border-radius: 0;
+      max-height: 50px;
+      object-fit: cover;
+      height: 50px;
+      width: 50px;
+      border-radius: 0;
   }
-    #help p {
+  
+  #help p {
       position: relative;
       padding-top: 10px;
       text-align: center;
   }
- 
+  
+  
   #help p::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;  /* Change to left: 0; */
+    left: 0;
     width: 100%; /* Make width 100% of the parent */
     height: 2px;
     background: black;
+  }
+  
+  /* Медиа-запрос для экранов меньше 768px (смартфоны) */
+  @media (max-width: 768px) {
+    #help {
+          padding: 15px; /* Reduce padding on small screens*/
+      }
+      #help nav {
+       flex-direction: column; /* Stack items on small screens*/
+       align-items: flex-start; /* Align left on small screens*/
+      }
+    #help ul {
+       flex-direction: column; /* Stack items on small screens*/
+       align-items: flex-start; /* Align left on small screens*/
+      }
+      #help ul > li {
+           margin-bottom: 10px; /* Spacing for stacked items */
+      }
+       #help ul > li:first-child {
+          margin-right: 0; /* Remove default margin */
+      }
+  
+      #help ul > li:nth-child(2) {
+          font-size: 1.2em;
+      }
+  
+       #help .help-left, #help .help-right {
+             margin-bottom: 20px;
+          }
+       #help table {
+          overflow-x: auto; /* Enable horizontal scrolling for table */
+          width: 100%;
+       }
+         #help td, #help th{
+             padding: 5px 10px; /* Reduce table cell padding for small screens*/
+           }
+  
+  }
+  
+  /* Media query for tablets */
+  @media (min-width: 768px) and (max-width: 1200px) {
+    #help {
+          padding: 20px; /* Reduce padding on tablet screens*/
+      }
+    #help table {
+      width: 90%; /* Table width should fill container */
+     }
+     #help td, #help th{
+           padding: 5px 15px;
+    }
   }
