@@ -360,67 +360,11 @@ html, body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
-  /* Стили для формы */
-  #endline fieldset {
-      border: none;
-      padding: 0;
-  }
-  
-  #endline legend {
-    font-size: 1.2em;
-    padding: 5px 0;
-  }
-  
-  .form-group {
-      margin-bottom: 10px;
-      display: flex; /* Чтобы label и input были на одной строке */
-      flex-direction: column;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="email"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-      outline: none;
-  }
-  
-  
-  /* Стиль для кнопки */
-  .submit-button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-    border-radius: 20px;
-    background-image: linear-gradient(to right, #B4F3F4, #FDE0FF);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #F3F4F5;
-    transform: scale(1.1); /* Scale instead of rotate */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .button-text {
-    margin-right: 5px;
-      color: #000;
-  }
-  
-  .icon{
-      color: #000; /* иконка черная */
-  }
+.grid-item iframe {
+  width: 100%;
+  height: 100%;
+   object-fit: cover; /* Заставляет видео занимать всё доступное пространство */
+}
   
   
   /* Стиль для кнопки Скачать игру*/
