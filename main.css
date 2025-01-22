@@ -257,7 +257,8 @@ html, body {
 
   .chess,
   .tetris,
-  .game2048 {
+  .game2048,
+  .sudoku {
     background-color: white;
     max-width: 50%;
     height: 100%;
